@@ -8,10 +8,8 @@ import collections
 import math
 from collections import Counter
 
-
-
-inputdirectory = "/Users/ross/Downloads/blogs/"
-outputdirectory =   "/Users/ross/Downloads/processed/"
+inputdirectory = "C:\\Users\\jonah\\Documents\\GitHub\\Stylometry\\Stylometry\\data\\Raw\\"
+outputdirectory =  "C:\\Users\\jonah\\Documents\\GitHub\\Stylometry\\Stylometry\data\\Processed\\"
 
 frequentwords = ['a', 'all', 'also', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'been', 'but', 'by', 'can', 'do', 'down', 'even', 'every', 'for', 'from', 'had', 'has', 'have', 'her', 'his', 'if', 'in', 'into', 'is', 'it', 'its', 'may', 'more', 'must', 'my', 'no', 'not', 'now', 'of', 'on', 'one', 'only', 'or', 'our', 'shall', 'should', 'so', 'some', 'such', 'than', 'that', 'the', 'their', 'then', 'there', 'things', 'this', 'to', 'up', 'upon', 'was', 'were', 'what', 'when', 'which', 'who', 'will', 'with', 'would', 'your']
 
@@ -56,11 +54,12 @@ if not os.path.exists(outputdir):
 		
 files = listdir(inputdir)
 files.sort() #puts unknown at the end
+print(files)
 
 for text in files:
 	frequentwordsfile = open(outputdir+text, 'w')
 	print(outputdir+text)
-	with open(inputdirectory +  text, 'r') as myfile:
+	with open(inputdirectory +  text, 'rb') as myfile:
 			
 		allwords = []
 			
